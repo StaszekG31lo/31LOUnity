@@ -34,7 +34,10 @@ public class PickingUpTrophy : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        isPickable = false;
+       if (other.gameObject.CompareTag("Player"))
+        {
+            isPickable = false;
+        }
     }
 
     void PickUp()
